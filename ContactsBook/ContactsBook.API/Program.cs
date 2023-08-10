@@ -1,3 +1,4 @@
+using ContactsBook.API.api.CustomExceptionMiddleware;
 using ContactsBook.API.application.CreatingContact;
 using ContactsBook.API.application.Repository;
 using ContactsBook.API.application.UpdatingContact;
@@ -36,6 +37,8 @@ app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader());
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
