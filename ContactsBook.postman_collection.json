@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "10385f56-a3e2-4313-858d-712c6d757250",
+		"name": "ContactsBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16026698"
+	},
+	"item": [
+		{
+			"name": "Add Contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Janek\",\r\n    \"lastName\": \"Nowak\",\r\n    \"email\": \"jan.nowak@gmail.com\",\r\n    \"phoneNumber\": \"123456789\",\r\n    \"address\": \"ul. Kwiatowa 10\",\r\n    \"city\": \"Warszawa\",\r\n    \"zip\": \"51-213\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7243/contacts/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7243",
+					"path": [
+						"contacts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Contacts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pageSize\": 1,\r\n    \"pageIndex\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7243/contacts/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7243",
+					"path": [
+						"contacts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Contact",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
