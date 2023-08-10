@@ -1,0 +1,7 @@
+<li class="list-group-item">
+  <button (click)="editContact()" type="button" class="btn btn-primary edit">Edit</button>
+  <span class="name">{{contact.firstName}} {{contact.lastName}}</span>
+  <div><span class="category">Email: </span>{{contact.email}}</div>
+  <div><span class="category">Phone number: </span>{{contact.phoneNumber}}</div>
+  <div><span class="category">Address: </span>{{contact.city}} {{contact.zip}}, {{contact.address}} </div>
+</li>

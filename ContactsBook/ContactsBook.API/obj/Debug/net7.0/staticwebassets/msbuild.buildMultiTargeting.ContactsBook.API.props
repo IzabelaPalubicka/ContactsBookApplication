@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ContactsBook.API.props" />
+</Project>

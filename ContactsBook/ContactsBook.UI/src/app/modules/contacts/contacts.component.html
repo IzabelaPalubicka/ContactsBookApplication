@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="blue-text">Contacts Book</h2>
+  <div class="input-group mb-3 search">
+    <input [(ngModel)]="typedSearchValue" type="text" class="form-control" placeholder="Search by email.." aria-describedby="basic-addon1">
+    <button type="button" class="btn btn-outline-primary" (click)="searchByValue()">Search</button>
+  </div>
+
+  <button class="btn btn-outline-primary create-button" (click)="createContact()">Create new Contact</button>
+
+  <ul class="list-group">
+    <li *ngFor="let contact of contacts">
+      <app-contact [contact]="contact" (showEditModalEmitter)="editContact($event)"></app-contact>
+    </li>
+  </ul>
+
+  <p>Total number of matching contacts: <span>{{ totalCount }}</span></p>
+
+  <app-pagination [totalItemCount]="totalCount" [pageSize]="pageSize" (onSelectedPageIndex)="onSelectedPageIndex($event)"></app-pagination>
+
+  <app-contact-details-form #contactModal (onChangedContact)="getContacts()"></app-contact-details-form>
+</div>

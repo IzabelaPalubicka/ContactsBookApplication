@@ -1,0 +1,28 @@
+.container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-group {
+  margin: 2rem 0;
+  width: 50rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.create-button {
+  right: 0;
+}
+
+.search {
+  width: 30rem;
+}
+
+.blue-text {
+  color: #0D6EFD;
+}

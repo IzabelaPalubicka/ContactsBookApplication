@@ -1,0 +1,69 @@
+<ng-template #contactModal let-modal>
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ getTitle() }}</h4>
+  </div>
+
+  <div class="modal-body">
+
+    <form [formGroup]="contactForm">
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" [formControl]="contactForm.controls['firstName']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('firstName')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('firstName')">{{maxLengthInfo('firstName')}}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" [formControl]="contactForm.controls['lastName']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('lastName')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('lastName')">{{maxLengthInfo('lastName')}}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" [formControl]="contactForm.controls['email']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('email')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('email')">{{maxLengthInfo('email')}}</span>
+        <span class="text-danger" *ngIf="isPatternValidationFailure('email')">Invalid email address</span>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone number</label>
+        <input type="tel" class="form-control" id="phoneNumber" [formControl]="contactForm.controls['phoneNumber']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('phoneNumber')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('phoneNumber')">{{maxLengthInfo('phoneNumber')}}</span>
+        <span class="text-danger" *ngIf="isPatternValidationFailure('phoneNumber')">Invalid phone number</span>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" [formControl]="contactForm.controls['address']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('address')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('address')">{{maxLengthInfo('address')}}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" [formControl]="contactForm.controls['city']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('city')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('city')">{{maxLengthInfo('city')}}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control" id="zip" [formControl]="contactForm.controls['zip']">
+        <span class="text-danger" *ngIf="isRequiredValidationFailure('zip')">{{ requiredInfo() }}</span>
+        <span class="text-danger" *ngIf="isMaxLengthValidationFailure('zip')">{{maxLengthInfo('zip')}}</span>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit"  [disabled]="!contactForm.valid" class="btn btn-outline-primary" (click)="modal.close()">Save</button>
+    <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss()">Cancel</button>
+  </div>
+
+</ng-template>
